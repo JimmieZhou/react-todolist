@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import TodoListComp from "../components/TodoListComp";
-import { ADD_ITEM, DELETE_ITEM, UPDATE_ITEM } from "../actions/todoActions";
+import { addItem, updateItem, deleteItem } from "../actions/todoActions";
 
 class TodoListContainer extends React.Component {
   render() {
@@ -31,22 +31,13 @@ const mapStateToProps = state => {
 const mapDispathToProps = dispatch => {
   return {
     handleAddClick: item => {
-      dispatch({
-        type: ADD_ITEM,
-        payload: { item }
-      });
+      dispatch(addItem(item));
     },
     handleDeleteClick: item => {
-      dispatch({
-        type: DELETE_ITEM,
-        payload: { item }
-      });
+      dispatch(deleteItem(item));
     },
     handleUpdateClick: item => {
-      dispatch({
-        type: UPDATE_ITEM,
-        payload: { item }
-      });
+      dispatch(updateItem(item));
     }
   };
 };

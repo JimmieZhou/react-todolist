@@ -4,12 +4,11 @@
  * @Author: jimmiezhou
  * @Date: 2019-12-16 17:48:13
  * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-17 13:49:43
+ * @LastEditTime: 2019-12-17 16:56:22
  */
 import {
   ADD_ITEM,
   DELETE_ITEM,
-  GET_ITEM,
   UPDATE_ITEM
 } from "../actions/todoActions";
 import * as _ from "lodash";
