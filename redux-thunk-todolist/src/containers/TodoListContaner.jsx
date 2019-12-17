@@ -44,7 +44,7 @@ const mapStateToProps = state => {
 const mapDispathToProps = dispatch => {
   return {
     initItem: item => {
-      dispatch(initItem(item));
+      dispatch(initItem());
     },
     handleAddClick: item => {
       dispatch(addItem(item));
