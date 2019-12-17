@@ -18,20 +18,7 @@ class TodoListContainer extends React.Component {
   }
 
   render() {
-    const {
-      todoState,
-      handleAddClick,
-      handleDeleteClick,
-      handleUpdateClick
-    } = this.props;
-    return (
-      <TodoListComp
-        todoState={todoState}
-        handleAddClick={handleAddClick}
-        handleDeleteClick={handleDeleteClick}
-        handleUpdateClick={handleUpdateClick}
-      />
-    );
+    return <TodoListComp {...this.props} />;
   }
 }
 
@@ -43,7 +30,7 @@ const mapStateToProps = state => {
 
 const mapDispathToProps = dispatch => {
   return {
-    initItem: item => {
+    initItem: () => {
       dispatch(initItem());
     },
     handleAddClick: item => {
