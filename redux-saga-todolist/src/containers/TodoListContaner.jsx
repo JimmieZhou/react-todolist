@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import TodoListComp from "../components/TodoListComp";
 import {
   initItemAsync,
-  addItem,
-  deleteItem,
-  updateItem
+  addItemAsync,
+  deleteItemAsync,
+  updateItemAsync
 } from "../actions/todoActions";
 
 class TodoListContainer extends React.Component {
@@ -30,13 +30,13 @@ const mapDispathToProps = dispatch => {
       dispatch(initItemAsync());
     },
     handleAddClick: item => {
-      dispatch(addItem(item));
+      dispatch(addItemAsync(item));
     },
     handleDeleteClick: item => {
-      dispatch(deleteItem(item));
+      dispatch(deleteItemAsync(item));
     },
     handleUpdateClick: item => {
-      dispatch(updateItem(item));
+      dispatch(updateItemAsync(item));
     }
   };
 };
