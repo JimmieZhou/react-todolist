@@ -11,10 +11,7 @@ import {
 
 class TodoListContainer extends React.Component {
   componentDidMount() {
-    const { initItem } = this.props;
-    axios.get("http://localhost:3001").then(function(res) {
-      initItem(res.data.data);
-    });
+    this.props.initItem()
   }
 
   render() {

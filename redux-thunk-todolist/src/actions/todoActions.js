@@ -3,8 +3,8 @@
  * @version: 1.0.0
  * @Author: jimmiezhou
  * @Date: 2019-12-16 18:20:19
- * @LastEditors: jimmiezhou
- * @LastEditTime: 2019-12-17 15:45:44
+ * @LastEditors  : jimmiezhou
+ * @LastEditTime : 2019-12-17 22:30:01
  */
 import axios from "axios";
 
@@ -13,8 +13,10 @@ export const ADD_ITEM = "ADD_ITEM";
 export const DELETE_ITEM = "DELETE_ITEM";
 export const UPDATE_ITEM = "UPDATE_ITEM";
 
+const base_url = "http://localhost:3001"
+
 export const initItem = () => dispatch => {
-  axios.get("http://localhost:3001").then(function(res) {
+  axios.get(`${base_url}/init`).then(function(res) {
     const item = res.data.data;
     dispatch({ type: INIT_ITEM, payload: { item } });
   });
