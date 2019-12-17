@@ -28,7 +28,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispathToProps = (dispatch, b) => {
+const mapDispathToProps = dispatch => {
   return {
     handleAddClick: item => {
       dispatch({
