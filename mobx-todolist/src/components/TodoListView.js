@@ -1,13 +1,21 @@
 /*
- * @Descripttion:
+ * @Descripttion: 
  * @version: 1.0.0
  * @Author: jimmiezhou
  * @Date: 2019-12-18 17:19:14
- * @LastEditors  : jimmiezhou
- * @LastEditTime : 2019-12-18 17:24:48
+ * @LastEditors: jimmiezhou
+ * @LastEditTime: 2019-12-18 17:20:09
  */
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { observer } from "mobx-react";
+
+class TodoList {
+  @observable todos = [];
+  @computed get unfinishedTodoCount() {
+    return this.todos.filter(todo => !todo.finished).length;
+  }
+}
 
 @observer
 class TodoListView extends Component {
@@ -36,4 +44,8 @@ const TodoView = observer(({ todo }) => (
   </li>
 ));
 
-export default TodoListView;
+const store = new TodoList();
+ReactDOM.render(
+  <TodoListView todoList={store} />,
+  document.getElementById("mount")
+);
